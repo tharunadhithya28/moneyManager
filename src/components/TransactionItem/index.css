@@ -1,0 +1,36 @@
+/* Write your CSS here */
+.transaction-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: x-small;
+}
+.each-column {
+  margin: 20px;
+}
+.transaction-heading-inputs {
+  font-size: 15px;
+  color: grey;
+  margin: 20px;
+}
+.delete-image {
+  width: 30px;
+  height: 30px;
+}
+.delete-button {
+  background-color: transparent;
+  border: none;
+}
+.history {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.delete {
+  width: 25px;
+  height: 25px;
+}
+.delete-history {
+  width: 0px;
+  margin-bottom: 13px;
+}
