@@ -15,7 +15,7 @@ class MoneyDetails extends Component {
             />
           </div>
           <div>
-            <p> Your Balance </p>
+            <p data-testid="balanceAmount"> Your Balance </p>
             <h1> Rs {balance} </h1>
           </div>
         </li>
@@ -28,7 +28,7 @@ class MoneyDetails extends Component {
             />
           </div>
           <div>
-            <p> Your Income </p>
+            <p data-testid="incomeAmount"> Your Income </p>
             <h1> Rs {income}</h1>
           </div>
         </li>
@@ -41,7 +41,7 @@ class MoneyDetails extends Component {
             />
           </div>
           <div>
-            <p> Your Expenses </p>
+            <p data-testid="expenseAmount"> Your Expenses </p>
             <h1> Rs {expenses} </h1>
           </div>
         </li>

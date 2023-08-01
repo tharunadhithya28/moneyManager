@@ -19,6 +19,7 @@
 .delete-button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .history {
   display: flex;

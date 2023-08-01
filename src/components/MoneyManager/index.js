@@ -40,12 +40,22 @@ class MoneyManager extends Component {
       historyList,
     } = this.state
     console.log(event.target.value)
-    this.setState(prevState => ({
-      balance: prevState.balance + amount,
-      income: prevState.income + amount,
-      title,
-      type,
-    }))
+    if (type === 'Income') {
+      this.setState(prevState => ({
+        balance: prevState.balance + amount,
+        income: prevState.income + amount,
+        title,
+        type,
+      }))
+    } else if (type === 'Expenses') {
+      this.setState(prevState => ({
+        balance: prevState.income - amount,
+        expenses: prevState.expenses + amount,
+        title,
+        type,
+      }))
+    }
+
     const newHistory = {
       id: uuidv4(),
       title,
@@ -96,11 +106,7 @@ class MoneyManager extends Component {
           </p>
         </div>
         <ul>
-          <MoneyDetails
-            balance={this.balance}
-            income={this.income}
-            expenses={this.expenses}
-          />
+          <MoneyDetails balance={balance} income={income} expenses={expenses} />
         </ul>
         <div className="bottom-container">
           <div className="transaction">
@@ -141,7 +147,7 @@ class MoneyManager extends Component {
             <h1> History </h1>
             <div>
               {historyList.map(eachitem => (
-                <TransactionItem eachitem={eachitem} />
+                <TransactionItem eachitem={eachitem} key={eachitem.id} />
               ))}
             </div>
           </div>
